@@ -21,6 +21,8 @@ The following search algorithms are implemented and evaluated:
 
 ## 📂 Project Structure
 
+```
+
 8-puzzle-ai/
 │
 ├── algorithms/ # Search algorithms implementations
@@ -48,7 +50,7 @@ The following search algorithms are implemented and evaluated:
 ├── main.py # Project entry point
 ├── README.md
 
----
+```
 
 ## Run the project:
 python main.py
