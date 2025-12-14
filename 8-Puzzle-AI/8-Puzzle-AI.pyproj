@@ -1,0 +1,56 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>3b4bc220-aab1-41ec-b96f-c7e7d7a80c37</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>main.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>8-Puzzle-AI</Name>
+    <RootNamespace>8-Puzzle-AI</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Algorithms\A_Star.py" />
+    <Compile Include="Algorithms\BFS.py" />
+    <Compile Include="Algorithms\DFS.py" />
+    <Compile Include="Algorithms\Hill_Climbing.py" />
+    <Compile Include="Algorithms\IDS.py" />
+    <Compile Include="Algorithms\UCS.py" />
+    <Compile Include="Experiments\Run_All.py" />
+    <Compile Include="main.py" />
+    <Compile Include="Puzzle\Puzzle.py" />
+    <Compile Include="Puzzle\State.py" />
+    <Compile Include="Utils\Heuristics.py" />
+    <Compile Include="Utils\Metrics.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Algorithms\" />
+    <Folder Include="Experiments\" />
+    <Folder Include="Report\" />
+    <Folder Include="Utils\" />
+    <Folder Include="Puzzle\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.md" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
