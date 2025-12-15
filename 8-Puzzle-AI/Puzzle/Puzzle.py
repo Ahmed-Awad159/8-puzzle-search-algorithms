@@ -1,10 +1,8 @@
-﻿# هذا الملف يحتوي على منطق لعبة 8- Puzzle فقط
+# هذا الملف يحتوي على منطق لعبة 8- Puzzle فقط
 
 # الحالة النهائية اللي كل الخوارزميات بتحاول توصل لها
-GOAL_STATE = [1, 2, 3,
-              4, 5, 6,
-              7, 8, 0]   # 0 يمثل المكان الفاضي
-
+GOAL_STATE = [1, 2, 3, 4, 5, 6, 7, 8, 0]   # 0 يمثل المكان الفاضي
+GRID_SIZE = 3
 
 def is_goal(state):
     """
@@ -63,3 +61,23 @@ def get_successors(state):
         successors.append(swap(zero_index, zero_index + 1))
 
     return successors
+
+
+def print_puzzle(board):
+    """Prints the 1D board list in a 3x3 grid format."""
+    s = "\n"
+    for i in range(0, 9, GRID_SIZE):
+        # Replace 0 (blank) with a space for better visualization
+        row = [str(tile) if tile != 0 else ' ' for tile in board[i:i+GRID_SIZE]]
+        s += " | ".join(row) + "\n"
+    print(s)
+
+def reconstruct_path(final_state):
+    """Traces back the path from the final state to the start state."""
+    path = []
+    current = final_state
+    while current is not None:
+        path.append(current.board)
+        current = current.parent
+    path.reverse()
+    return path
