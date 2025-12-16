@@ -6,7 +6,7 @@ import math # Used for setting initial infinite cost
 
 
 # --- UCS Algorithm ---
-def solve_8_puzzle_ucs(initial_board):
+def solve(initial_board):
     """
     Solves the 8-Puzzle using Uniform Cost Search (UCS).
     Uses a Priority Queue (Min-Heap) to always expand the node with the lowest cost (g(n)).
